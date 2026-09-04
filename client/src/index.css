@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  code, .font-mono-label {
+    @apply font-mono;
+  }
+
+  /* Visible keyboard focus everywhere, matching the accent color */
+  :focus-visible {
+    outline: 2px solid #F2A65A;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Eyebrow-style monospace label used above section headings */
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-signal;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl sm:text-4xl font-semibold mb-4;
+  }
+
+  .container-px {
+    @apply px-6 sm:px-10 lg:px-20;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-signal text-midnight font-medium px-6 py-3 rounded-md
+      hover:bg-signal-soft transition-colors duration-200 shadow-glow;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border border-border-light dark:border-border-dark
+      px-6 py-3 rounded-md font-medium hover:border-signal hover:text-signal transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white dark:bg-surface border border-border-light dark:border-border-dark rounded-lg;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

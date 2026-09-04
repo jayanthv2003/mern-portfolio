@@ -1,0 +1,2 @@
+Place resume.pdf, profile.jpg, and og-image.png in this folder (public/).
+They are referenced directly by the app (e.g. /resume.pdf, /profile.jpg).
